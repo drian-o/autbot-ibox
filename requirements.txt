@@ -1,0 +1,2 @@
+# Browser untuk membaca iBox asli dan melanjutkan checkout di sesi pengguna.
+playwright==1.62.0

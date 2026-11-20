@@ -1,0 +1,33 @@
+STOCKPILOT iBox LIVE v2.1 - PORT 8777 
+
+Karena browser masih membuka server lama di port 8765.
+Versi ini memakai port 8777, jadi tidak berbenturan dengan proses lama.
+
+LANGKAH WINDOWS:
+1. Ekstrak ZIP ke folder BARU, misalnya D:\StockPilot_iBox_LIVE_8777.
+2. Buka folder StockPilot_iBox_LIVE_8777.
+3. Klik dua kali MULAI_IBOX_LIVE.bat (otomatis menyiapkan dependency bila perlu).
+4. Buka http://127.0.0.1:8777 (BUKAN 8765).
+5. Lihat tulisan: IBOX LIVE v2.1 - TANPA MODE DEMO - PORT 8777.
+6. Klik Tambah incaran lalu tempel URL produk iBox.co.id.
+7. Klik Baca produk iBox untuk memuat data situs asli.
+
+JIKA VERSI LAMA TETAP TERBUKA:
+- Tutup tab lama yang beralamat http://127.0.0.1:8765.
+- Jangan pakai start_windows.bat dari folder ibox_order_tool 
+- Jika jendela terminal versi baru menampilkan error, baca log pada terminal.
+- Port 8777 hanya lokal pada komputer sendiri.
+
+PENTING:
+- Versi ini tanpa skenario DEMO dan hanya menerima URL produk ibox.co.id.
+- Stok dari iBox tergantung halaman situs/anti-bot dan belum dijamin konsisten.
+- Checkout otomatis sampai pembayaran belum tersedia secara default.
+  Kamu tetap menyelesaikan keranjang dan pembayaran di situs resmi iBox.
+- Jangan mengirim PIN, OTP, atau data kartu ke dashboard ini.
+
+PERBAIKAN ENOSPC / NO SPACE LEFT ON DEVICE:
+- Installer memeriksa Edge/Chrome yang telah terpasang, lalu melewati unduhan Chromium.
+- Jika Edge/Chrome ada, cukup jalankan MULAI_IBOX_LIVE.bat. Tidak perlu mengunduh browser terpisah.
+- Jika .venv dari versi sebelumnya sudah ada, bisa langsung menjalankan aplikasi.
+- Jika browser tidak terdeteksi, periksa disk C: dan D: (browser Playwright membutuhkan ruang ekstraksi).
+- Tidak perlu menonaktifkan antivirus atau menjalankan sebagai administrator.

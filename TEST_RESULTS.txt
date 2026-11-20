@@ -1,0 +1,46 @@
+STOCKPILOT iBox v2 — HASIL VERIFIKASI
+Tanggal: 20 November 2026 (WIB)
+
+Perintah: python3 run_tests.py
+Hasil: 85 tes lulus, 0 gagal, 0 error (5,333 detik).
+Rincian: API 10; Engine 21; Store 25; parser/config umum 4;
+adapter iBox dengan DOM tiruan 25.
+11 tes Chromium pada merchant fixture localhost tidak dijalankan pada run final.
+
+Validasi tambahan:
+- Startup CLI tanpa --live memakai konfigurasi iBox bawaan.
+- API awal: wishlist/pesanan kosong, anggaran Rp0, koneksi not_checked.
+- Login dan pembacaan produk tersedia tanpa pemetaan checkout.
+- Checkout otomatis tetap dinonaktifkan dengan konfigurasi bawaan.
+- Data tersimpan terpisah di data/ibox_live_v2.
+- Server lokal dapat dijalankan, dibaca, dan dihentikan dengan bersih.
+- node --check static/app.js lulus.
+- sh -n run.sh lulus; Windows batch disimpan dengan CRLF.
+- UI: referensi ID JavaScript cocok dengan HTML; tidak ada ID duplikat.
+
+Cakupan penting:
+- URL produk harus HTTPS ibox.co.id atau www.ibox.co.id.
+- Anggaran, harga, jumlah, prioritas, revisi target dan order ganda.
+- Notify tidak membuat reservasi atau pesanan.
+- Persiapan manual tidak menghasilkan invoice/referensi merchant palsu.
+- Harga varian lain tidak dianggap sebagai harga varian incaran.
+- Pilihan tidak tersedia/kontradiktif/struktur tidak dikenal berhenti jelas.
+- Hasil pemeriksaan lama tidak menimpa target yang telah diedit.
+- Login, preview, monitor dan checkout memakai tab terpisah.
+- Resume mempertahankan tab checkout; tab hilang meminta review riwayat.
+- Pengiriman pesanan tidak pasti tidak dicoba ulang otomatis.
+
+Observasi situs publik:
+Halaman https://ibox.co.id/product/iphone-duo-s9600006714 diamati
+langsung melalui browser. Penanda nama, harga, warna, kapasitas,
+jumlah dan tombol Stok habis diverifikasi pada DOM publik.
+Pemetaan ini tidak menjamin seluruh model/struktur iBox lain cocok.
+
+Batas verifikasi:
+Tes logika/DOM tiruan tidak sama dengan transaksi merchant nyata.
+Tidak ada pesanan atau pembayaran iBox yang dijalankan dalam verifikasi.
+Adapter Python belum diuji end-to-end terhadap akun/checkout iBox.
+Installer .bat belum dieksekusi pada Windows di lingkungan ini.
+Preview visual dashboard lengkap belum diverifikasi pada browser Windows.
+Checkout otomatis opsional memerlukan pemetaan checkout yang nyata;
+konfigurasi bawaan mendukung pemantauan dan persiapan produk di browser.
